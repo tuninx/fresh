@@ -256,7 +256,6 @@ def parse_text(text, username, message_id):
                 if m.group(2) and int(m.group(2)) <= 59:
                     state = re.search('Состояние:\\n(.*)$', text)
                     if auto_def_enabled and time() - current_order['time'] > 3600:
-                        fwd(cbot_name, message_id)
                         if donate_enabled:
                             gold = int(re.search('💰([0-9]+)', text).group(1))
                             inv = re.search('🎒Рюкзак: ([0-9]+)/([0-9]+)', text)
