@@ -279,6 +279,7 @@ def parse_text(text, username, message_id):
                                 else:
                                     log('Донат {0} золота в казну замка'.format(gold-gold_to_left))
                                     action_list.append('/donate {0}'.format(gold-gold_to_left))
+                        fwd('@', cbot_name, hero_message_id)
                         update_order(castle)
                     return
             log('Времени достаточно')
@@ -562,8 +563,3 @@ if __name__ == '__main__':
     _thread.start_new_thread(queue_worker, ())
     receiver.message(work_with_message(receiver))
     receiver.stop()
-
-    
-if text == '🛡 Защита':
-  fwd(cbot_name, hero_message_id)
-  
