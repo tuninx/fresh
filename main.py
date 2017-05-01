@@ -24,6 +24,9 @@ order_usernames = ''
 # имя замка
 castle_name = 'blue'
 
+# имя бота замка
+cbot_name = 'BlueOysterBot'
+
 captcha_bot = 'ChatWarsCaptchaBot'
 
 # путь к сокет файлу
@@ -169,6 +172,7 @@ def queue_worker():
     global tz
     lt_info = 0
     # гребаная магия
+    print(sender.contacts_search(cbot_name))
     print(sender.contacts_search(bot_username))
     print(sender.contacts_search(captcha_bot))
     sleep(3)
@@ -275,6 +279,7 @@ def parse_text(text, username, message_id):
                                 else:
                                     log('Донат {0} золота в казну замка'.format(gold-gold_to_left))
                                     action_list.append('/donate {0}'.format(gold-gold_to_left))
+                        fwd(cbot_name, hero_message_id)
                         update_order(castle)
                     return
             log('Времени достаточно')
