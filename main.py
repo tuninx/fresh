@@ -562,3 +562,8 @@ if __name__ == '__main__':
     _thread.start_new_thread(queue_worker, ())
     receiver.message(work_with_message(receiver))
     receiver.stop()
+
+    
+if text == '🛡 Защита':
+  fwd(cbot_name, hero_message_id)
+  
